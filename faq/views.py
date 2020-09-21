@@ -18,3 +18,14 @@ def index(request):
             'num_answer': num_answer
         }
     )
+
+
+class QuestionListViews(generic.ListView):
+    model = Question
+
+    def get_queryset(self):
+        return Question.objects.filter()[:10]
+
+
+class QuestionDetailViews(generic.DetailView):
+    model = Question

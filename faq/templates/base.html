@@ -9,7 +9,7 @@
 
 </head>
 <body>
-    <div>
+
     <header class="header">
         <div class="container">
             <div class="header_right">
@@ -25,13 +25,13 @@
     </header>
 
     <div class="right_menu">
-        <a class="right_menu_link" href="#">Вопросы</a>
-        <a class="right_menu_link" href="#">Категории</a>
+        <a class="right_menu_link" href="{% url 'quest' %}">Вопросы</a>
+        <a class="right_menu_link" href="">Категории</a>
         <a class="right_menu_link" href="#">Задать вопрос</a>
         <a class="right_menu_link" href="#">Связь с нами</a>
     </div>
-
-    {% block content %}{% endblock %}
-
+    <div class="main">
+        {% block content %}{% endblock %}
+    </div>
 </body>
 </html>
