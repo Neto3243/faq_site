@@ -28,7 +28,15 @@ class QuestionListViews(generic.ListView):
 
 
 def quest(request):
+    que_st = Question.objects.all()
     return render(
         request,
-        'quest.html'
+        'quest.html',
+        context= {
+            'que_st': que_st
+        }
     )
+
+
+class QuestionDetailViews(generic.DetailView):
+    model = Question

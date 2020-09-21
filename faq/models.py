@@ -18,7 +18,7 @@ class Question(models.Model):
         Profile,
         on_delete=models.CASCADE,
     )
-    quest = models.TextField(max_length=1000, primary_key=True)
+    quest = models.TextField(max_length=1000)
     category = models.ManyToManyField(Category)
     anr = models.BooleanField()
 
@@ -28,8 +28,8 @@ class Question(models.Model):
     def __str__(self):
         return self.quest
 
-    # def get_absolute_url(self):
-    #     return reverse('question-detail', args=[str(self.theme)])
+    def get_absolute_url(self):
+        return reverse('question-detail', args=[str(self.id)])
 
 
 class Answer(models.Model):

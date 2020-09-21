@@ -7,12 +7,15 @@
             {% for question in question_list %}
                 <details class="details_quest">
                     <summary class="sum_quest">
-                        {{ question.quest }}
+                        {{ question.quest }}, (вопрос от {{ question.user }})
                     </summary>
-                    <p class="p">{{ question.answer.ans }}</p>
+                    <p class="p">{{ question.answer.ans }}, (ответ от
+                    {{ question.answer.user }})</p>
                     <a class="a_link_quest" href="#">Комментарии</a>
                 </details>
             {% endfor %}
+        {% else %}
+            <p>На сайте нет вопрсов(</p>
         {% endif %}
         <p>Не нашел нужный вопрос? Тогда тебе сюда: <a class="a_link_quest" href="{% url 'quests' %}">Все вопросы</a></p>
     </div>
