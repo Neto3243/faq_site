@@ -40,3 +40,7 @@ def quest(request):
 
 class QuestionDetailViews(generic.DetailView):
     model = Question
+
+
+class CategoryListViews(generic.ListView):
+    model = Category

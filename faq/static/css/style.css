@@ -114,7 +114,7 @@ p {
 }
 
 /* question_list */
-.div_quest {
+.div {
     margin: 0;
     padding: 10px;
 }
@@ -132,7 +132,7 @@ details[open] p {
   100% {opacity: 1;}
 }
 
-.details_quest {
+.details {
     margin: 5px;
     padding: 5px;
 
@@ -140,17 +140,17 @@ details[open] p {
     border: 2px solid black;
 }
 
-.sum_quest {
+.sum {
     border-bottom: 1px solid black;
 }
 
-.a_link_quest {
+.a_link {
     color: #702828;
     text-decoration: none;
 
     transition: color .1s linear;
 }
 
-.a_link_quest:hover {
+.a_link:hover {
     color: blue;
 }

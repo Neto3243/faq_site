@@ -6,4 +6,6 @@ urlpatterns = [
     re_path(r'^quest/$', views.QuestionListViews.as_view(), name='quest'),
     re_path(r'^quests/$', views.quest, name='quests'),
     re_path(r'^quest/(?P<pk>\d+)$', views.QuestionDetailViews.as_view(), name='question-detail'),
+    re_path(r'^categories/$', views.CategoryListViews.as_view(), name='categories'),
 ]
+
