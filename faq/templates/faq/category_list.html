@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2>Категории:</h2>
+    <div class="div">
+        {% if category_list %}
+            {% for category in category_list %}
+                <a class="a_link" href="#">{{ category.name }}</a>
+            {% endfor %}
+        {% endif %}
+    </div>
+{% endblock %}
