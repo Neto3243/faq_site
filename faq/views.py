@@ -27,5 +27,8 @@ class QuestionListViews(generic.ListView):
         return Question.objects.filter()[:10]
 
 
-class QuestionDetailViews(generic.DetailView):
-    model = Question
+def quest(request):
+    return render(
+        request,
+        'quest.html'
+    )
