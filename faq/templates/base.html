@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>FAQ</title>
+
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+</head>
+<body>
+    <div>
+    <header class="header">
+        <div class="container">
+            <div class="header_right">
+                <div class="header_logo">FAQ</div>
+
+                <nav class="nav">
+                    <a class="nav_link" href="{% url 'index' %}">Главная</a>
+                    <a class="nav_link" href="#">О нас</a>
+                    <a class="nav_link" href="#">Войти</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <div class="right_menu">
+        <a class="right_menu_link" href="#">Вопросы</a>
+        <a class="right_menu_link" href="#">Категории</a>
+        <a class="right_menu_link" href="#">Задать вопрос</a>
+        <a class="right_menu_link" href="#">Связь с нами</a>
+    </div>
+
+    {% block content %}{% endblock %}
+
+</body>
+</html>

@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="main">
+        <p>Привет, ты попал на сайт с вопросами,
+            затрагивающие любые аспекты жизни </p>
+
+        <h2>Здесь ты найдешь</h2>
+
+        <ul class="ul">
+            <li>{{ num_user }}-<strong>Столько новых друзей</strong></li>
+            <li>{{ num_quest }}-<strong>Столько важных вопоросов</strong></li>
+            <li>{{ num_answer }}-<strong>Столько ответов от профи</strong></li>
+        </ul>
+    </div>
+{% endblock %}
