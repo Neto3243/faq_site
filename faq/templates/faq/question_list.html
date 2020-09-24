@@ -11,7 +11,7 @@
                     </summary>
                     <p class="p">{{ question.answer.ans }}, (ответ от
                     {{ question.answer.user }})</p>
-                    <a class="a_link" href="#">Комментарии</a>
+                    <a class="a_link" href="{{ question.get_absolute_url }}">Открыть вопрос</a>
                 </details>
             {% endfor %}
         {% else %}
