@@ -12,21 +12,25 @@ class Category(models.Model):
     def __str__(self):
         return self.name
 
+    def get_absolute_url(self):
+        return reverse('category', args=[str(self.id)])
+
 
 class Question(models.Model):
     user = models.ForeignKey(
         Profile,
         on_delete=models.CASCADE,
     )
-    quest = models.TextField(max_length=1000)
+    quest_text = models.TextField(max_length=1000)
     category = models.ManyToManyField(Category)
-    anr = models.BooleanField()
+    answer_bool = models.BooleanField()
+    pub_date = models.DateField()
 
     class Meta:
-        ordering = ["quest"]
+        ordering = ["quest_text", "pub_date"]
 
     def __str__(self):
-        return self.quest
+        return self.quest_text
 
     def get_absolute_url(self):
         return reverse('question-detail', args=[str(self.id)])
@@ -41,13 +45,14 @@ class Answer(models.Model):
         Question,
         on_delete=models.CASCADE,
     )
-    ans = models.TextField(max_length=1000)
+    answer_text = models.TextField(max_length=1000)
+    pub_date = models.DateField()
 
     class Meta:
-        ordering = ["quest"]
+        ordering = ["quest", "pub_date"]
 
     def __str__(self):
-        return self.ans
+        return self.answer_text
 
 
 class Comment(models.Model):
@@ -58,8 +63,10 @@ class Comment(models.Model):
     quest = models.ForeignKey(
         Question,
         on_delete=models.CASCADE,
+        related_name='comments'
     )
-    comment = models.TextField(max_length=1000)
+    comment_text = models.TextField(max_length=1000)
+    pub_date = models.DateField()
 
     class Meta:
-        ordering = ["quest"]
+        ordering = ["quest", "-pub_date"]

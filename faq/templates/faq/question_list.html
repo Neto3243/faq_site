@@ -7,11 +7,11 @@
             {% for question in question_list %}
                 <details class="details">
                     <summary class="sum">
-                        {{ question.quest }}, (вопрос от {{ question.user }})
+                        {{ question.quest_text }}, (вопрос от {{ question.user }})
                     </summary>
-                    <p class="p">{{ question.answer.ans }}, (ответ от
+                    <p class="p">{{ question.answer.answer_text }}, (ответ от
                     {{ question.answer.user }})</p>
-                    <a class="a_link" href="{{ question.get_absolute_url }}">Открыть вопрос</a>
+                    <a class="a_link" href="{{ question.get_absolute_url }}">Комментарии</a>
                 </details>
             {% endfor %}
         {% else %}

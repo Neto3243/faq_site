@@ -154,3 +154,50 @@ details[open] p {
 .a_link:hover {
     color: blue;
 }
+
+/* comment */
+.over {
+    overflow-y: scroll;
+
+    height: 200px;
+}
+
+.bk_com {
+    margin: 3px 0;
+
+    border: 2px solid black;
+    background-color: grey;
+}
+
+.date {
+    font-size: 13px;
+}
+
+/* quest */
+.right_menu_category {
+    margin: 0;
+    height: 100%;
+    width: 150px;
+
+    position: fixed;
+    top: 0;
+    right: 240px;
+    padding-top: 70px;
+    padding-left: 10px;
+
+    background-color: #846A62;
+    border-left: 2px solid #5D453F;
+}
+
+.right_menu_cat_link {
+    margin: 10px;
+    padding: 5px 10px;
+    text-decoration: none;
+    font-size: 20px;
+    color: black;
+    display: block;
+}
+
+.right_menu_cat_link:hover {
+    color: blue;
+}

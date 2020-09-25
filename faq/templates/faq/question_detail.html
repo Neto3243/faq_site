@@ -1,11 +1,16 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <h2>{{ question.quest }}</h2>
+    <h2>{{ question.quest_text }}</h2>
     <div class="div">
-        <p>{{ question.answer.ans }}, (ответ от {{ question.answer.user }})</p>
-    </div>
-    <div>
-        
+        <p>{{ question.answer.answer_text }}, (ответ от {{ question.answer.user }})</p>
+        <div class="over">
+            {% for comment in question.comments.all %}
+                <div class="bk_com">
+                    <p class="date">{{ comment.pub_date }}</p>
+                    <p> {{ comment.user }}: {{ comment.comment_text }}</p>
+                </div>
+            {% endfor %}
+        </div>
     </div>
 {% endblock %}

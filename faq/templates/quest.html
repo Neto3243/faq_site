@@ -2,11 +2,19 @@
 
 {% block content %}
     <h2>Вопросы:</h2>
+
+    <div class="right_menu_category">
+        <h4>Категории:</h4>
+        {% for category in cat_st %}
+                <a class="right_menu_cat_link" href="{% url 'category' pk=category.pk %}">{{ category.name }}</a>
+        {% endfor %}
+    </div>
+
     <div class="div">
         {% if que_st %}
             {% for question in que_st %}
                 <p><a class="a_link" href="{{ question.get_absolute_url }}">
-                    {{ question.quest }}</a>, вопрос от {{ question.user }}</p>
+                    {{ question.quest_text }}</a>, вопрос от {{ question.user }}</p>
             {% endfor %}
         {% else %}
             <p>На сайте нет вопрсов(</p>
