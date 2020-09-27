@@ -20,7 +20,7 @@ class AnswerAdmin(admin.ModelAdmin):
 
 @admin.register(Comment)
 class CommentAdmin(admin.ModelAdmin):
-    list_display = ('user', 'comment_text', 'pub_date')
+    list_display = ('user', 'quest' , 'comment_text', 'pub_date')
 
 
 admin.site.register(Category)

@@ -18,7 +18,12 @@
                 <nav class="nav">
                     <a class="nav_link" href="{% url 'index' %}">Главная</a>
                     <a class="nav_link" href="#">О нас</a>
-                    <a class="nav_link" href="#">Войти</a>
+                    {% if user.is_authenticated %}
+                        {{ user.get_username }}
+                        <a class="nav_link" href="{% url 'logout'%}?next={{request.path}}">Выйти</a>
+                    {% else %}
+                        <a class="nav_link" href="{% url 'login'%}?next={{request.path}}">Войти</a>
+                    {% endif %}
                 </nav>
             </div>
         </div>
@@ -26,7 +31,7 @@
 
     <div class="right_menu">
         <a class="right_menu_link" href="{% url 'quest' %}">Вопросы</a>
-        <a class="right_menu_link" href="#">Задать вопрос</a>
+        <a class="right_menu_link" href="{% url 'quest-new' %}">Задать вопрос</a>
     </div>
     <div class="main">
         {% block content %}{% endblock %}

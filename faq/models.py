@@ -23,14 +23,20 @@ class Question(models.Model):
     )
     quest_text = models.TextField(max_length=1000)
     category = models.ManyToManyField(Category)
-    answer_bool = models.BooleanField()
-    pub_date = models.DateField()
+    answer_bool = models.BooleanField(null=True)
+    pub_date = models.DateField(null=True)
 
     class Meta:
         ordering = ["quest_text", "pub_date"]
 
     def __str__(self):
         return self.quest_text
+
+    @property
+    def test(self):
+        if self.answer.answer_text is None:
+            return False
+        return True
 
     def get_absolute_url(self):
         return reverse('question-detail', args=[str(self.id)])
@@ -70,3 +76,6 @@ class Comment(models.Model):
 
     class Meta:
         ordering = ["quest", "-pub_date"]
+
+    def __str__(self):
+        return self.comment_text
