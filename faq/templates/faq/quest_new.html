@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <h1>New post</h1>
+    <h1>Вопрос</h1>
     <form method="POST">{% csrf_token %}
         {{ form.quest_text }}
         <button type="submit">Save</button>

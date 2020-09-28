@@ -6,6 +6,7 @@ from django.shortcuts import get_object_or_404
 from .forms import QuestForm, ComForm, AnsForm
 from django.shortcuts import redirect
 from django.utils import timezone
+from django.views.generic.edit import UpdateView, DeleteView
 from django.db import IntegrityError
 from django.http import HttpResponse
 
@@ -109,13 +110,6 @@ def comment_new(request, pk):
 
 def answer_new(request, pk):
     que_st = get_object_or_404(Question, pk=pk)
-    ans_st = Answer.objects.get(pk=que_st.pk)
-
-    try:
-        Answer.objects.get(pk=ans_st.pk)
-        # group.users.add(User.objects.get(name='Julian'))
-    except IntegrityError:
-        return HttpResponse("<h1>ghbd</h1>")
 
     if request.method == "POST":
         form = AnsForm(request.POST)
@@ -133,3 +127,5 @@ def answer_new(request, pk):
         'faq/answer_new.html',
         {'form': form}
     )
+
+

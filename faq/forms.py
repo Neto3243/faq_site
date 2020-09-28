@@ -1,4 +1,4 @@
-from .models import Question, Comment, Answer
+from .models import Question, Comment, Answer, Category
 from django import forms
 
 
