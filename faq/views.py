@@ -7,6 +7,7 @@ from .forms import QuestForm, ComForm, AnsForm
 from django.shortcuts import redirect
 from django.utils import timezone
 from django.views.generic.edit import UpdateView, DeleteView
+from django.urls import reverse_lazy
 from django.db import IntegrityError
 
 
@@ -126,5 +127,3 @@ def answer_new(request, pk):
         'faq/answer_new.html',
         {'form': form}
     )
-
-

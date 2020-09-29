@@ -9,7 +9,6 @@ class AnswerInline(admin.TabularInline):
 @admin.register(Question)
 class QuestionAdmin(admin.ModelAdmin):
     list_display = ('user', 'quest_text', 'pub_date')
-    list_filter = ('user', )
     inlines = [AnswerInline]
 
 

@@ -5,9 +5,9 @@
     <div class="div">
         <p>{{ question.answer.answer_text }}, (ответ от {{ question.answer.user }})</p>
         {% if perms.answer %}
-            <a class="a_link" href="{% url 'answer-new' pk=question.pk %}">Написать ответ</a>
+            <p><a class="a_link" href="{% url 'answer-new' pk=question.pk %}">Написать ответ</a></p>
         {% endif %}
-        <a class="a_link" href="{% url 'comment-new' pk=question.pk %}">Написать комментарий</a>
+        <p><a class="a_link" href="{% url 'comment-new' pk=question.pk %}">Написать комментарий</a></p>
         <div class="over">
             {% for comment in question.comments.all %}
                 <div class="bk_com">
