@@ -9,8 +9,12 @@
                     <summary class="sum">
                         {{ question.quest_text }}, (вопрос от {{ question.user }})
                     </summary>
-                    <p class="p">{{ question.answer.answer_text }}, (ответ от
-                    {{ question.answer.user }})</p>
+                    {% if question.answer %}
+                        <p class="p">{{ question.answer.answer_text }}, (ответ от
+                        {{ question.answer.user }})</p>
+                    {% else %}
+                        <p>На этот вопрос пока нет ответа</p>
+                    {% endif %}
                     <a class="a_link" href="{{ question.get_absolute_url }}">Комментарии</a>
                 </details>
             {% endfor %}

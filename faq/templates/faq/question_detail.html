@@ -3,7 +3,11 @@
 {% block content %}
     <h2>{{ question.quest_text }}</h2>
     <div class="div">
-        <p>{{ question.answer.answer_text }}, (ответ от {{ question.answer.user }})</p>
+        {% if question.answer %}
+            <p>{{ question.answer.answer_text }}, (ответ от {{ question.answer.user }})</p>
+        {% else %}
+            <p>На этот вопрос пока нет ответа</p>
+        {% endif %}
         {% if perms.answer %}
             <p><a class="a_link" href="{% url 'answer-new' pk=question.pk %}">Написать ответ</a></p>
         {% endif %}
