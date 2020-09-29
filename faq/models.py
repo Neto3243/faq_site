@@ -23,8 +23,7 @@ class Question(models.Model):
     )
     quest_text = models.TextField(max_length=1000)
     category = models.ManyToManyField(Category)
-    answer_bool = models.BooleanField(null=True)
-    pub_date = models.DateField(null=True)
+    pub_date = models.DateField()
 
     class Meta:
         ordering = ["quest_text", "pub_date"]
@@ -32,11 +31,11 @@ class Question(models.Model):
     def __str__(self):
         return self.quest_text
 
-    @property
-    def test(self):
-        if self.answer.answer_text is None:
-            return False
-        return True
+    # @property
+    # def test(self):
+    #     if self.answer.answer_text is None:
+    #         return False
+    #     return True
 
     def get_absolute_url(self):
         return reverse('question-detail', args=[str(self.id)])

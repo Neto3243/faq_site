@@ -8,7 +8,6 @@ from django.shortcuts import redirect
 from django.utils import timezone
 from django.views.generic.edit import UpdateView, DeleteView
 from django.db import IntegrityError
-from django.http import HttpResponse
 
 
 def index(request):
